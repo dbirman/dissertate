@@ -170,7 +170,7 @@ suthesis documentation.}}{}
     \fourthreader{Severus Snape} %if needed
  
     \beforepreface
-    \prefacesection{Preface}
+    \prefacesection{Abstract}
         This thesis tells you all you need to know about...
     \prefacesection{Acknowledgments}
         I would like to thank...
@@ -554,10 +554,10 @@ of Doctor of Philosophy.
 
 % Redefine \thebibliography to go to a new page and put an entry in the
 % table of contents
-\let\@ldthebibliography\thebibliography
-\renewcommand{\thebibliography}[1]{\newpage
-                \@ldthebibliography{#1}%
-\addcontentsline{toc}{chapter}{\bibname}}
+% \let\@ldthebibliography\thebibliography
+% \renewcommand{\thebibliography}[1]{\newpage
+%                 \@ldthebibliography{#1}%
+% \addcontentsline{toc}{chapter}{\bibname}}
 
 % redefine \@endpart so the blank page after part has a page number
 \def\@endpart{\vfil\newpage
