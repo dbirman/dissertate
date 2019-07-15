@@ -1,39 +1,30 @@
 
 \section{Introduction}
 
-The demands of everyday life require us to flexibly shift our attention between many different aspects of the visual world. When researchers operationalize these behaviors they often turn to tasks in which an observer must select information from the visual scene either from a spatial location or a particular feature dimension. This distinction has led to categorizing covert visual attention into two types: spatial attention, when task demands require selecting information at a specific location and not others, and feature-based attention, where task demands require selecting particular features (e.g. colors, spatial frequencies, motion directions, etc). This categorization could reflect a real physiological difference in how spatial and feature-based attention are implemented by the brain. An alternative though is that space is not privileged over other features in visual cortex, and that instead selection of information is a generic computation.
+The demands of everyday life require us to flexibly shift our attention between many different aspects of the visual world. When researchers operationalize these behaviors they often turn to tasks in which an observer must select information from the visual scene either from a spatial location or a particular feature dimension. This distinction has led to categorizing covert visual attention into two types: spatial attention, when task demands require selecting information at a specific location and not others, and feature-based attention, where task demands require selecting particular features (e.g. colors, spatial frequencies, motion directions, etc). This categorization could reflect a real physiological difference in how spatial and feature-based attention are implemented by the brain. An alternative though is that space is not privileged over other features in visual cortex, and that instead, selection of information is a generic computation.
 
-Spatial and feature-based attention have occasionally been compared to each other to evaluate how their
+Although the majority of attention research has focused on isolating feature-based attention from spatial attention \citep{Saenz2002-fs}, occasionally researchers have focused on comparing the two forms of selection. Previous psychophysics research has shown that selection by location may be slightly faster than selection by feature \citep{Liu2007-ed} and that spatial selection may be primary [todo: cite soto 2004]. Comparisons have suggested spatial attention might be stronger and that small differences in how stimulus noise affects different forms of selection \citep{Ling2009-rq}, but because these stimuli were not selected on a shared metric they can't be directly related. In general, the idea that spatial selection precedes feature-based selection matches in some ways with cortical physiology. Early visual cortex is organized retinotopically \citep{Wandell2007-pr} while sensitivity to specific visual features only emerges later [todo: cite]. 
 
-To relate different forms of selection we designed a set of experiments in which spatial and feature selection could be measured on the same perceptual metric. In one experiment this metric was the recall of a stimulus from working memory, and in a second a comparison of two perceptually similar stimuli. In both cases we cued observers to select two stimuli out of a set of four using either the stimulus features or spatial locations. We then model each task to estimate the underlying perceptual sensitivity in each selection condition. Our results suggest that selection is generic: perceptual sensitivity does not change according to the selection process. But, the likelihood of mistaking one stimulus for another is more likely when two stimuli are overlapping in space.
-
-Other attempts to compare spatial and feature-based:
-\citep{Liu2007-ed} - spatial is slightly faster than feature-based. 
-
-\citep{Saenz2003-qz} - same stimulus, but attending same direction or opposite directions shows an advantage for same direction 
-
-
-**PAge 98 in Pashler:
-Search for a T or a green element, reporting presence and location in a N-AFC task. When detected the location can be reported, and if not correct then the probability is 1/N distributed. 
-See Watson and Robson 1981
-Graham 1989
-See also Snyder 1972, reporting letter selected by color, more likely to make errors of spatial neighbors than far away neighbors. How to refute that if space = feature? See Nissen 1985 as well.
-Tsal Lavie 1988 - 3 of each color letter, report one red + more, more likely to be neighbors than to be the same color. But is this just convenience because color vs. letter is at different levels? Same with Snyder, etc? Color vs. direction vs. space seems more reasonable test?
-Carrasco paper from early 2000s
-
+To separate spatial and feature-based attention and compare them we built a stimulus in which different forms of selection could be compared \citep{Saenz2003-qz}. We used this stimulus in two tasks, a perceptual averaging task and a working memory estimation task. In both tasks observers were asked to select information either by spatial location or according to a stimulus property: selecting by motion direction or color and then reporting about the other property. In both datasets we show that sensitivity is extremely similar between each form of selection and that any differences in performance are accounted for by changes in bias to the irrelevant dot patches. Finally, we suggest possible implementations by which a common computation could select sensory representations and account for the behavioral observations. 
+% **PAge 98 in Pashler:
+% Search for a T or a green element, reporting presence and location in a N-AFC task. When detected the location can be reported, and if not correct then the probability is 1/N distributed. 
+% See Watson and Robson 1981
+% Graham 1989
+% See also Snyder 1972, reporting letter selected by color, more likely to make errors of spatial neighbors than far away neighbors. How to refute that if space = feature? See Nissen 1985 as well.
+% Tsal Lavie 1988 - 3 of each color letter, report one red + more, more likely to be neighbors than to be the same color. But is this just convenience because color vs. letter is at different levels? Same with Snyder, etc? Color vs. direction vs. space seems more reasonable test?
 
 \section{Methods}
 
 \subsection{Observers}
-In total X observers were subjects for the experiments. All observers except one (who was an author) were naive to the intent of the experiments. X observers were excluded during the initial training sessions due to an inability to maintain appropriate fixation (see eye-tracking below). Procedures were approved in advance by the Stanford Institutional Review Board on human participants research and all observers gave prior written informed consent before they participated in the experiment. When necessary, observers wore corrective lenses to correct their vision to normal. Observers were filtered prior to inclusion based on self-reported color vision and tested for colour vision deficits using the Ishihara test (color-blindness.com), no additional observers had to be excluded based on the test results. 
+In total 13 observers were subjects for the experiments. All observers except one (who was an author) were naive to the intent of the experiments. One observer was excluded during the initial training sessions due to an inability to maintain appropriate fixation (see eye-tracking below). Procedures were approved in advance by the Stanford Institutional Review Board on human participants research and all observers gave prior written informed consent before they participated in the experiment. When necessary, observers wore corrective lenses to correct their vision to normal. Observers were filtered prior to inclusion based on self-reported color vision and tested for colour vision deficits using the Ishihara test (color-blindness.com), one observer had to be excluded based on the test results. 
 
 \subsection{Hardware setup for stimulus and task control}
 
-Visual stimuli were generated using MATLAB (The Mathworks, Inc.) and MGL \citep{Gardner2018-uq}. Stimuli were displayed on a 22.5 inch VIEWPixx LCD display (resolution of 1900x1200, refresh-rate of 120 Hz) and responses collected via keyboard. Output luminance and spectral luminance distributions were measured for the LCD display with a PR650 spectrometer (Photo Research, Inc.). The gamma table for each display was dynamically adjusted at the beginning of each trial to linearize the luminance display such that the full resolution of the 8-bit table could be used to display the maximum contrast needed. The luminance spectra were used to compute a transformation matrix from the L*a*b* color space to the RGB output of the screen, such that the a* and b* dimensions could be separately manipulated without changing the luminance (L*). Other sources of light were minimized during behavior.
+Visual stimuli were generated using MATLAB (The Mathworks, Inc.) and MGL \citep{Gardner2018-uq}. Stimuli were displayed on a 22.5 inch VIEWPixx LCD display (resolution of 1900x1200, refresh-rate of 120 Hz) and responses collected via keyboard. Output luminance and spectral luminance distributions were measured for the LCD display with a PR650 spectrometer (Photo Research, Inc.). The gamma table for each display was dynamically adjusted at the beginning of each trial to linearize the luminance display such that the full resolution of the 8-bit table could be used to display the maximum contrast needed. The luminance spectra were used to compute a transformation matrix from the L*a*b* color space to the RGB output of the screen, such that the a* and b* dimensions could be separately manipulated without changing the luminance (L*). Other sources of light were minimized during behavior. Observers used a circular volume controller to submit their responses in angle space (Powermate USB, Griffin Audio).
 
 \subsection{Eye tracking}
 
-Eye-tracking was performed using an infrared video-based eye-tracker at 500 Hz (Eyelink 1000; SR Research). Calibration was performed throughout each session to maintain a validation accuracy of less than 1 degree average offset from expected using a thirteen-point calibration procedure. Trials were initiated by fixating the central cross for 300 ms and canceled on-line when an observer’s eye position moved more than 1.5 degree away from the center of the fixation cross for more than 300 ms. During training and before data collection. observers were excluded from further participation if we were unable to calibrate the eye tracker to an error of less than 1 degree of visual angle or if their canceled trial rate did not drop to near zero.
+Eye-tracking was performed using an infrared video-based eye-tracker at 500 Hz (Eyelink 1000; SR Research). Calibration was performed throughout each session to maintain a validation accuracy of less than 1 degree average offset from expected using a thirteen-point calibration procedure. Trials were initiated by fixating the central cross for 300 ms and canceled on-line when an observer’s eye position moved more than 1.5 degree away from the center of the fixation cross for more than 300 ms. During training and before data collection observers were excluded from further participation if we were unable to calibrate the eye tracker to an error of less than 1 degree of visual angle or if their canceled trial rate did not drop to near zero.
 
 \subsection{Experimental design}
 
@@ -41,35 +32,96 @@ Eye-tracking was performed using an infrared video-based eye-tracker at 500 Hz (
 
 Stimuli consisted of two pairs of dot patches, to the left and right of a central fixation cross (0.5 x 0.5 deg). The dot patches were circular regions centered 8 degrees eccentric with a diameter of 10 deg, covering from 3 to 13 deg along the horizontal axis and -5 to +5 deg along the vertical axis. Each patch was filled with two sets of moving dots (0.2 dots / deg$^2$, per set, 0.3 deg diameter). Dots within a patch were given an identical color (equal luminance, with a* and b* varying) and moved in the same direction at 3.5 deg / s. Dots were `alive' for 0.25 s before vanishing and reappearing immediately at a new random location.
 
-On each trial in the averaging task observers were asked to report the average motion direction of two dot patches (Fig. \ref{fig:c4f1}. Before each set of 20 trials observers were told which feature they would be selecting the patches with with the phrase ``cue side'' or ``cue color'' shown at fixation. Each trial was initiated by the observer fixating the central cross for 300 ms. This was followed by a 0.75 s cue, either a line to the left or right or a miniature patch of colored dots. The feature instructed the observers about which two dot patches they would need to average: either the two on the left, on the right, or the two yellow or blue patches (one on the left and one on the right). A 0.75 s delay followed. 
+On each trial in the averaging task observers were asked to report the average motion direction of two dot patches (Fig. \ref{fig:c4f1}. Before each set of 20 trials observers were told which feature they would be selecting the patches with with the phrase ``cue side'' or ``cue color'' shown at fixation. Each trial was initiated by the observer fixating the central cross for 300 ms. This was followed by a 0.75 s cue, either a line to the left or right or a miniature patch of colored dots. The feature instructed the observers about which two dot patches they would need to average: either the two on the left, on the right, or the two yellow or blue patches (one on the left and one on the right). A 0.75 s delay followed. During the stimulus period the dot patches began moving coherently in random directions. The target patches were constrained to be less than 135 degrees apart, to avoid confusion about the correct response (e.g. when 180 degrees apart, two possible answers are correct). Observers were shown the stimulus for a variable duration of 0.25 to 0.75 s, then allowed unlimited time to rotate the response wheel and make a response. Feedback was given by showing the actual average motion direction (see Figure). Each trial was followed by a brief inter-trial interval (0 - 2 s, uniformly distributed).
+
+\subsubsection{Psychophysical distance}
+
+We report all of our results according to the normalized psychophysical distance between angles in motion direction and color space, rather than the physical units. Our motivation for this is based on a recent result showing that in working memory estimation tasks, correctly taking into account the psychophysical distance is critical to correctly interpreting data [todo: cite schurgin]. In brief, the motivation for this scaling is that beyond a certain degree distance the ``psychophysical'' distance becomes compressed. The intuition here is that if you are trying to compare N and NE to E, it's easy to tell that NE and E are closer. But if you are trying to quickly compare N and NE to S, this task is more difficult and there is little difference between that comparison and N and NE to SW. Without this re-scaling of distances it's easy to mistake poor sensitivity for a high lapse rate. The authors of [todo: cite schurgin] convincingly demonstrate that in fact lapse rates are consistently low in difficult working memory tasks. Once scaling is taken into account a single sensitivity parameter captures a multitude of effects. For our purposes we approximated this scaling by fitting a sigmoidal function to data available in that paper: 
+
+\begin{equation}
+    d(x) = 1.1\frac{x^{1.5}}{x^{1.5}+35^{1.5}}
+    \label{eqn:c5psycho}
+\end{equation}
+
+Where $d$ is the normalized distance and $x$ is the angular distance in degrees. 
 
 \subsubsection{Estimation task}
 
+On each trial in the estimation task observers were asked to report about either the color or motion direction of a single dot patch. Before each block of 40 trials observers were told which feature would be reported with either the phrase ``report color'' or ``report direction'' appearing on the screen. Key to the task was that although observers ultimately reported about only one dot patch they could be cued to remember just that patch, or multiple patches, during a brief delay period. Each trial consisted of the following sequence: a fixation period [todo]
 
-On each trial in the estimation task observers were asked to report about either the color or motion direction of a single dot patch. Before each block of 40 trials observers were told which feature would be reported with either the phrase ``report color'' or ``report direction'' appearing on the screen. Key to the task was that although observers ultimately reported about only one dot patch they could be cued to remember just that patch, or multiple patches, during a brief delay period. Each trial consisted of the following sequence: a fixation period
+\subsubsection{Estimation task data analysis}
 
-\subsection{Channel linking model}
+To analyze the results of the estimation task we fit a modified version of the target confusability competition model from [todo: cite schurgin]. The model is based on the idea that noisy internal channels are independently competing to represent a stimulus (Fig. \ref{fig:c4f4}a). On each trial the model proceeds in two steps. First, the stimulus (or stimuli) are encoded by the channels, setting their mean response. The profile of each channel comes from a re-scaling of the angle (in a* b* space, or in motion direction space) to the normalized psychophysical distance (Eq. \ref{eqn:c5psycho}). As an example of the encoding step the response of a small set of channels (Fig. \ref{fig:c4f4}a) to a stimulus with an angle of zero are shown (Fig. \ref{fig:c4f4}b). Therefore, each channel response is distributed as follows:
 
-To model the results of the estimation and averaging tasks we 
+\begin{equation}
+    C_{\theta}(x) = \mathcal{N}(\alpha \mu1 - d(x-\theta),\sigma=1)
+    \label{eqn:c5channel}
+\end{equation}
+
+Where $\theta$ is the preferred orientation for that channel. $\alpha$ is an amplitude parameter which controls the scaling of the response and is the only free parameter in the model.
+
+The second step in the model is to find the observer's behavioral response by taking the maximum response among the channels. Because each channel has independent normally-distributed noise, the likelihood of each channel winning this can be computed as the conditional probability of a channel exceeding all of the other channels. We approximate this likelihood by summing the likelihood over all possible channel responses, as follows:
+
+\begin{equation}
+    \matchcal{L}(\theta) = \sum_{r=0}^{\infty} P(C_{\theta}(x)=r > (C_0(x)=r \times C_1(x)=r \times ...))
+    \label{eqn:c5like}
+\end{equation}
+
+computing this for all values of $\theta$. 
+
+Because the response calculation is analogous to signal detection the $\alpha$ parameter in Eq. \ref{eqn:c5channel} is actually the sensitivity of the channel (i.e. $d'$). We can fit this free parameter to a data set by maximizing the likelihood of observed responses to obtain an estimate of the perceptual sensitivity.
+
+We performed the model fitting step in such a way as to separate an observer's bias (i.e. likelihood of responding about the incorrect dot patch) from their sensitivity (i.e. their variability in response quality, for a given dot patch). We did this by modeling the observer's trial-by-trial response as a combination of a likelihood function for each stimulus patch (Eq. \ref{eqn:c5like}) with a set of bias parameters.
+
+\begin{equation}
+    \matchcal{L}(\theta) = \beta_{target}\matchcal{L}_{target} + \beta_{side}\matchcal{L}_{side} +\beta_{feature}\matchcal{L}_{feature} +\beta_{distractor}\matchcal{L}_{distractor}
+\end{equation}
+
+Where the terms target, side, feature, and distractor correspond to the dot patches that are on the same side, opposite-side with matched-feature, and opposite-side with mismatched-feature, respectively (Fig. \ref{fig:c4f5}). The actual $\beta$ values were constrained so that $\beta_{target}+\beta_{side}+\beta_{feature}+\beta_{distractor}=1$, by calculating them from intermediate values:
+
+\begin{equation}
+    \beta_{target} = \beta_{s} * \beta_{f}
+\end{equation}
+
+\begin{equation}
+    \beta_{side} = \beta_{s} * (1-\beta_{f})
+\end{equation}
+
+\begin{equation}
+    \beta_{feature} = (1-\beta_{s}) * (1-\beta_{d})
+\end{equation}
+
+\begin{equation}
+    \beta_{distractor} = (1-\beta_{s}) * \beta_{d}
+\end{equation}
+
+Where $\beta_s$, $\beta_f$, and $\beta_d$ are each constrained to the range [0,1]. In this way, setting $\beta_s=1$ and $\beta_f=1$ means that the observer is always choosing the target and never incorrectly reporting about the other three dot patches (i.e. $\beta_{target}=1$).
+
+In sum, we fit four sensitivity parameters ($\alpha$) and three bias parameters ($\beta$) for the data set in which observers selected by location or color and separately for the data set in which they selected by location or motion direction.
+
+\subsection{Implementing attention in a channel linking model}
+
+The channels in the behavioral model described above have tuning which, by definition, matches the behavior. In reality, the psychophysical scaling is a result of the readout process from neurons tuned with much sharper functions. To explore how attention might change channel responses we first explored how to connect sharp tuning functions to the psychophysical space described above (M. Schurgin, personal communication, 2019). One way to approximate the psychophysical tuning functions is to read out 
+
+The approximate shape of the psychophysical tuning functions (Eq. \ref{eqn:c5psycho}) can be recovered by computing the correlation between channels with normally distributed noise. 
 
 \section{Results}
-
 
 \begin{figure}
 \centering
 \includegraphics[keepaspectratio,width=0.5\textwidth]{figs_c4/f1_task.pdf}
-\caption[Averaging task]{Averaging task}
+\caption[Averaging task]{Motion direction averaging task. Observers were asked to select two out of four random dot patches and average their motion direction. Observers initiated trials by fixating a central cross, causing the two dot patches to appear with incoherent motion. A cue indicated whether they should select the left or right patches (spatial selection) or the yellow or blue ones (feature-based selection). After a brief delay the dot patches each began moving in random directions, before vanishing again for a second short delay. Finally, observers used a rotating wheel to report the \textit{average} direction of motion for the two dot patches they were asked to select. Feedback was given by indicating the true average motion direction.}
 \label{fig:c4f1}
 \end{figure}
 
+We characterized human perceptual sensitivity to the average motion direction of two dot patches, while asking observers to select the two patches either based on their common location or a shared feature (Fig. \ref{fig:c4f1}. To measure perceptual sensitivity we recorded each observer's estimation error relative to the true average motion direction. We found that whether observers selected the two dot patches by spatial location (left or right) or by feature (yellow or blue), their estimation errors remained nearly identical (Fig. \ref{fig:c4f2}). Consistent with the task design we found that giving observers a longer stimulus (Fig. \ref{fig:c4f3}a) or a smaller angle difference between the two dot patches (Fig. \ref{fig:c4f3}b) improved sensitivity slightly. 
 
 \begin{figure}
 \centering
 \includegraphics[keepaspectratio,width=0.5\textwidth]{figs_c4/f2_aca_perf.pdf}
-\caption[Behavioral task]{}
+\caption[Estimation error during averaging]{Estimation error during the averaging task. A histogram displaying the average proportion of responses at each distance from the true average motion direction (0) is shown, averaged across observers. Selection by spatial location (i.e. averaging the two patches on the right or left) is shown in yellow, and selection by color (i.e. averaging the two yellow or blue patches) is shown in blue. The two inset plots show the same histogram but in a circular space, with a red dashed line indicating the true average. Note that the x-axis has been re-scaled from degrees to psychophysical distance, see Methods for details.}
 \label{fig:c4f2}
 \end{figure}
-
 
 \begin{figure}
 \centering
@@ -78,25 +130,38 @@ To model the results of the estimation and averaging tasks we
 \label{fig:c4f3}
 \end{figure}
 
-\begin{figure}
-\centering
-\includegraphics[keepaspectratio,width=0.5\textwidth]{figs_c4/f3_TCC_model.pdf}
-\caption[TCC model]{}
-\label{fig:c4f4}
-\end{figure}
+The averaging task demonstrates that if differences in selection exist they are small and may depend in specific ways on the context of particular tasks. What that design cannot differentiate is whether any small performance differences are the result of a change in the sensitivity between conditions or bias between conditions. In some previous experiments researchers have reported that spatial compared to feature-based selection leads to small differences in timing [todo: cite] and performance [todo: cite]. We next sought to design a task which could differentiate between changes in bias and sensitivity. Our rationale was that a change in bias should be related to observers making errors whereas a change in sensitivity would be related to the computation occurring during sensory selection. We first designed a task to orthogonalize these dimensions and then extended an existing psychophysics model to capture the behavior. 
 
 \begin{figure}
 \centering
 \includegraphics[keepaspectratio,width=0.5\textwidth]{figs_c4/f4_estimationtask.pdf}
 \caption[Estimation task]{}
+\label{fig:c4f4}
+\end{figure}
+
+The estimation task uses the same stimulus as the averaging task, but we now asked observers to recall a single motion direction (rather than the average of two). Prior to reporting this observers could be cued to remember only the direction of motion of the target they would later report, or the motion direction of multiple dot patches (Fig. \ref{fig:c4f4}). In the most difficult case (Cue 4: Distributed) observers memorized the directions of all four potential targets. In two conditions observers were asked to memorize either the motion directions of the two patches on the left or right (Cue 2: side) or the two yellow or blue patches (Cue 2: color), in the same manner as in the averaging task. In all conditions a Post-Cue was used to reveal which of the memorized motion directions had to be reported.
+
+\begin{figure}
+\centering
+\includegraphics[keepaspectratio,width=0.5\textwidth]{figs_c4/f3_TCC_model.pdf}
+\caption[TCC model]{}
 \label{fig:c4f5}
+\end{figure}
+
+To understand the data we collected from the estimation task we needed to decompose bias and sensitivity. To do this we employed a simple model of perceptual sensitivity 
+
+\begin{figure}
+\centering
+\includegraphics[keepaspectratio,width=0.5\textwidth]{figs_c4/f4b_estimation_perf.pdf}
+\caption[Estimation task performance]{}
+\label{fig:c4f6}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[keepaspectratio,width=0.5\textwidth]{figs_c4/f5_channel_attention.pdf}
-\caption[Attention in channel model]{Implementations of attention in a hypothetical channel model. }
-\label{fig:c4f6}
+\caption[Attention in a channel model]{Implementations of attention in a hypothetical channel model. }
+\label{fig:c4f7}
 \end{figure}
 
 \section{Discussion}

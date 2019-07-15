@@ -128,7 +128,7 @@ The measurements of sensitivity which we report will be sensitive to the signal-
 
 \begin{figure}[ht]
 \centering
-\includegraphics[keepaspectratio,width=0.5\textwidth]{figs_c2/Fig1_task.pdf}
+\includegraphics[keepaspectratio,width=0.65\textwidth]{figs_c2/Fig1_task.pdf}
 \caption[Cortical measurement experiment.]{Cortical measurement experiment. Observers were shown patches of moving dots that increased in contrast and motion coherence on each trial. A 30-s baseline period preceded each scan with 25\% contrast dots and incoherent motion and the baseline dots persisted between trials. On each trial the contrast increased by 0, 25, 50, or 75\% and the coherence by 0, 25, 50, 75, or 100\% for a stimulus duration of 250 to 4,000 ms. Observers performed an asynchronous task at fixation throughout the experiment.}
 \label{fig:c2f1}
 \end{figure}
@@ -140,7 +140,7 @@ We characterized human cortical responses to changes in contrast and motion cohe
 
 \begin{figure}
 \centering
-\includegraphics[keepaspectratio,width=0.5\textwidth]{figs_c2/Fig2_v1mt.pdf}
+\includegraphics[keepaspectratio,width=0.6\textwidth]{figs_c2/Fig2_v1mt.pdf}
 \caption[Measurements of event-related responses in cortical areas V1 and MT]{Measurements of event-related responses in cortical areas V1 and MT. A: cortical area V1. To obtain the individual responses shown here we performed an event-related analysis on our time series. In total we included 40 conditions in the experiment: 20 consisted of a full cross of changes in contrast and/or coherence presented for 2,500 ms (shown in bold in the grid in the bottom left) and 20 were a subset of the full cross conditions presented for various durations (shown in diagonal for the four conditions with additional durations recorded). We measured cortical responses to changes in contrast (top left) where each trace is averaged over changes in coherence, i.e., each response is the average of a row in the bottom left grid. We also measured responses to changes in coherence (bottom right), each trace is averaged over changes in contrast, i.e., each response is the average of a column in the grid. We made additional measurements across a large range of stimulus durations (top right) also shown in the grid. B: as in A for cortical area MT (hMT+). In all panels the event-related responses are averaged across observers and error bars indicate the bootstrapped 95\% confidence interval; some error bars may be hidden. Note that for visualization event-related responses are only shown out to 15 s but the analysis used a window of 40.5 s.}
 \label{fig:c2f2}
 \end{figure}
@@ -164,7 +164,7 @@ Across the rest of the visual areas that we were able to retinotopically define 
 
 \begin{figure}
 \centering
-\includegraphics[keepaspectratio,width=0.5\textwidth]{figs_c2/Fig4_model.pdf}
+\includegraphics[keepaspectratio,width=\textwidth]{figs_c2/Fig4_model.pdf}
 \caption[Population response function model]{Population response function model. A: Each condition in the experiment was defined by three parameters: the increment in contrast above baseline (+0, +25, +50, or +75\%), the increment in coherence above baseline (+0, +25, +50, +75, +100\%), and the stimulus duration (250, 500, 1,000, 2,000, or 4,000 ms). As an example we use condition 1 to demonstrate the model. B: to estimate the response to each feature within a condition we first find the change in response due to the corresponding change in stimulus intensity according to the population response functions. For contrast the population response function is a Naka-Rushton with two free parameters: $\alpha_{con}$ controlling the amplitude and $\sigma$ the shape. For coherence the response function was a saturating non-linearity with two free parameters: αcoherence controlling the amplitude and κ the shape. We added the resulting change in response together (while testing for interaction effects, see methods) and included an onset parameter to account for stimulus response that did not vary parametrically with the stimulus features. C: the total response, including onset, was used to scale a boxcar function whose length matched the stimulus duration. The boxcar was additionally scaled by a parameter to account for the nonlinear effect of stimulus duration. D: the resulting boxcar was convolved with a canonical hemodynamic response function fit separately for each observer. E: the model outputs a prediction for each condition about the expected event-related response (red lines). The parameters within the population response function model were then optimized to minimize the sum of squared errors between the data (black markers) and the model responses.}
 \label{fig:c2f4}
 \end{figure}
@@ -192,7 +192,7 @@ Across cortical visual areas the model captured the response to changes in contr
 
 \begin{figure}
 \centering
-\includegraphics[keepaspectratio,width=0.5\textwidth]{figs_c2/Fig5_fit.pdf}
+\includegraphics[keepaspectratio,width=0.65\textwidth]{figs_c2/Fig5_fit.pdf}
 \caption[Population response functions.]{Population response functions. A: the population response functions fit to each cortical area V1-MT (hMT+) are shown compared with the magnitude of the event-related response for the conditions in which only one feature changed. These correspond to the conditions in the first column and last row of each event-related response grid in Figs. 2 and 3. To make the functions comparable to the data in an easy to interpret space we reduced each event-related response to a single magnitude value which was obtained by finding the linear scaling of the canonical hemodynamic response to that condition. The model outputs predictions for all 40 conditions but we are only showing the subset where either contrast or coherence changed alone. Note that the predictions here are not out of sample (i.e., these are not the cross-validation results) but we show the full fit to better visualize the response functions. B: as in A but for the variable duration conditions in which contrast and coherence changed maximally (+75\% contrast, +100\% coherence). In all plots markers indicate the average across observers and error bars the bootstrapped 95\% confidence interval.}
 \label{fig:c2f5}
 \end{figure}
@@ -209,7 +209,7 @@ The population response model fits (Fig. \ref{fig:c2f5}) replicate earlier repor
 
 \begin{figure}
 \centering
-\includegraphics[keepaspectratio,width=0.5\textwidth]{figs_c2/Fig6_sensitivity.pdf}
+\includegraphics[keepaspectratio,width=0.65\textwidth]{figs_c2/Fig6_sensitivity.pdf}
 \caption[Cortical sensitivity to contrast and motion coherence]{Cortical sensitivity to contrast and motion coherence. A: to obtain a qualitative estimate of cortical sensitivity to each motion visibility feature across the cortical visual areas we plotted the αcontrast parameter from the Naka-Rushton function against the slope of a linear fit of the coherence functions. B: the slope of the coherence functions fits as in A replotted with individual subjects. C: the αcontrast parameter as in A replotted with individual subjects shown for each cortical area. D: we plot the ratio of the sensitivity parameters as an unbiased additional comparison because the amplitude parameters could be sensitive to the signal-to-noise ratio of the measurement in different cortical areas. Note that for some subjects the slope of the coherence response was near zero in some cortical areas, we note these as a ratio of infinity (Inf). The means are calculated excluding infinite values. E: the stimulus-onset response parameter $R_{onset}$ indexes the portion of the response that was not parametrically modulated by contrast or coherence. F: for each doubling in stimulus duration the proportion of response increase is shown by cortical area where 100\% would indicate that responses increased linearly with duration. In all panels markers indicate the mean and error bars the bootstrapped 95\% confidence interval. Error bars are omitted in panels (B–E) for visualization.}
 \label{fig:c2f6}
 \end{figure}
