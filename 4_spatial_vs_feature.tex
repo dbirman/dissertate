@@ -1,17 +1,11 @@
 
 \section{Introduction}
 
-The demands of everyday life require us to flexibly shift our attention between many different aspects of the visual world. When researchers operationalize these behaviors they often turn to tasks in which an observer must select information from the visual scene either from a spatial location or a particular feature dimension. This distinction has led to categorizing covert visual attention into two types: spatial attention, when task demands require selecting information at a specific location and not others, and feature-based attention, where task demands require selecting particular features (e.g. colors, spatial frequencies, motion directions, etc). This categorization could reflect a real physiological difference in how spatial and feature-based attention are implemented by the brain. An alternative though is that space is not privileged over other features in visual cortex, and that instead, selection of information is a generic computation.
+The demands of everyday life require us to flexibly shift our attention between many different aspects of the visual world. When researchers operationalize these behaviors they often turn to tasks in which an observer must select information from the visual scene either from a spatial location, a particular feature dimension, or combinations of these. The intuitive difference between spatial location and other features has led to categorizing covert visual attention into two types: spatial attention, when task demands require selecting information at a specific location and not others, and feature-based attention, where task demands require selecting particular features (e.g. colors, spatial frequencies, motion directions, etc). This categorization may reflect a real physiological difference in how spatial and feature-based attention are implemented by the brain. It is also possible that space is not privileged over other features in visual cortex, and that instead, selection of information is a generic computation.
 
-Although the majority of attention research has focused on isolating feature-based attention from spatial attention \citep{Saenz2002-fs}, occasionally researchers have focused on comparing the two forms of selection. Previous psychophysics research has shown that selection by location may be slightly faster than selection by feature \citep{Liu2007-ed} and that spatial selection may be primary [todo: cite soto 2004]. Comparisons have suggested spatial attention might be stronger and that small differences in how stimulus noise affects different forms of selection \citep{Ling2009-rq}, but because these stimuli were not selected on a shared metric they can't be directly related. In general, the idea that spatial selection precedes feature-based selection matches in some ways with cortical physiology. Early visual cortex is organized retinotopically \citep{Wandell2007-pr} while sensitivity to specific visual features only emerges later [todo: cite]. 
+Although the majority of attention research has focused on isolating feature-based attention from spatial attention \citep{Saenz2002-fs}, occasionally researchers have focused on comparing the two forms of selection. Previous psychophysics research has shown that selection by location may be slightly faster than selection by feature \citep{Liu2007-ed} [todo: cite harter 1982, hillyard munte 1984] and that spatial selection may be primary \citep{Soto2004-cs,Tsal1988-qx}. The idea of primacy has been shown by showing that subjects are more likely to recall letters near an attended location in space over letters of a similar color at distant locations \citep{Tsal1988-qx} and that errors in letter recall occur for spatial neighbors but not for color-matched distant neighbors [todo: cite snyder 1972]. Another way this has been described is to say that stimuli must be bound together by location to create objects \citep{Treisman1980-gu}, making location primary over other features. Other comparisons have suggested that spatial attention might have more of an influence on perceptual sensitivity and that small differences in stimulus noise have different effects on spatial vs. featural selection \citep{Ling2009-rq}.
 
-To separate spatial and feature-based attention and compare them we built a stimulus in which different forms of selection could be compared \citep{Saenz2003-qz}. We used this stimulus in two tasks, a perceptual averaging task and a working memory estimation task. In both tasks observers were asked to select information either by spatial location or according to a stimulus property: selecting by motion direction or color and then reporting about the other property. In both datasets we show that sensitivity is extremely similar between each form of selection and that any differences in performance are accounted for by changes in bias to the irrelevant dot patches. Finally, we suggest possible implementations by which a common computation could select sensory representations and account for the behavioral observations. 
-% **PAge 98 in Pashler:
-% Search for a T or a green element, reporting presence and location in a N-AFC task. When detected the location can be reported, and if not correct then the probability is 1/N distributed. 
-% See Watson and Robson 1981
-% Graham 1989
-% See also Snyder 1972, reporting letter selected by color, more likely to make errors of spatial neighbors than far away neighbors. How to refute that if space = feature? See Nissen 1985 as well.
-% Tsal Lavie 1988 - 3 of each color letter, report one red + more, more likely to be neighbors than to be the same color. But is this just convenience because color vs. letter is at different levels? Same with Snyder, etc? Color vs. direction vs. space seems more reasonable test?
+To separate spatial and feature-based attention we built a stimulus in which different forms of selection could be compared. We used this stimulus in two tasks, a perceptual averaging task and a working memory estimation task. In both tasks observers were asked to select information either by spatial location or according to a stimulus property (either motion direction or color) while reporting about a third property. In both data sets we show that sensitivity is extremely similar between each form of selection and that any differences in performance are accounted for by changes in bias to the irrelevant dot patches. Finally, we suggest possible implementations by which a common computation could select sensory representations and account for the behavioral observations. 
 
 \section{Methods}
 
@@ -54,20 +48,20 @@ On each trial in the estimation task observers were asked to report about either
 To analyze the results of the estimation task we fit a modified version of the target confusability competition model from [todo: cite schurgin]. The model is based on the idea that noisy internal channels are independently competing to represent a stimulus (Fig. \ref{fig:c4f4}a). On each trial the model proceeds in two steps. First, the stimulus (or stimuli) are encoded by the channels, setting their mean response. The profile of each channel comes from a re-scaling of the angle (in a* b* space, or in motion direction space) to the normalized psychophysical distance (Eq. \ref{eqn:c5psycho}). As an example of the encoding step the response of a small set of channels (Fig. \ref{fig:c4f4}a) to a stimulus with an angle of zero are shown (Fig. \ref{fig:c4f4}b). Therefore, each channel response is distributed as follows:
 
 \begin{equation}
-    C_{\theta}(x) = \mathcal{N}(\alpha \mu1 - d(x-\theta),\sigma=1)
+    C_{\theta}(x) = \mathcal{N}(\mu = \alpha(x-\theta),\sigma=1)
     \label{eqn:c5channel}
 \end{equation}
 
 Where $\theta$ is the preferred orientation for that channel. $\alpha$ is an amplitude parameter which controls the scaling of the response and is the only free parameter in the model.
 
-The second step in the model is to find the observer's behavioral response by taking the maximum response among the channels. Because each channel has independent normally-distributed noise, the likelihood of each channel winning this can be computed as the conditional probability of a channel exceeding all of the other channels. We approximate this likelihood by summing the likelihood over all possible channel responses, as follows:
+The second step in the model is to find the observer's behavioral response by taking the maximum response among the channels. Because each channel has independent normally-distributed noise, the likelihood of each channel winning this can be computed as the conditional probability of a channel exceeding all of the other channels. We approximate this likelihood by computing the likelihood over all possible channel responses, as follows:
 
 \begin{equation}
-    \matchcal{L}(\theta) = \sum_{r=0}^{\infty} P(C_{\theta}(x)=r > (C_0(x)=r \times C_1(x)=r \times ...))
+    \matchcal{L}(\theta) = \int_{-\infty}^{\infty} P(x_{\theta}=a) \prod_{j\neq \theta}(P(x_j < a)) da
     \label{eqn:c5like}
 \end{equation}
 
-computing this for all values of $\theta$. 
+Where $P(x)$ is normally distributed with $\mu=0$ and $\sigma=1$. To compute the full likelihood distribution we evaluate Eq. \ref{eqn:c5like} at all values of $\theta$.
 
 Because the response calculation is analogous to signal detection the $\alpha$ parameter in Eq. \ref{eqn:c5channel} is actually the sensitivity of the channel (i.e. $d'$). We can fit this free parameter to a data set by maximizing the likelihood of observed responses to obtain an estimate of the perceptual sensitivity.
 
@@ -101,9 +95,25 @@ In sum, we fit four sensitivity parameters ($\alpha$) and three bias parameters 
 
 \subsection{Implementing attention in a channel linking model}
 
-The channels in the behavioral model described above have tuning which, by definition, matches the behavior. In reality, the psychophysical scaling is a result of the readout process from neurons tuned with much sharper functions. To explore how attention might change channel responses we first explored how to connect sharp tuning functions to the psychophysical space described above (M. Schurgin, personal communication, 2019). One way to approximate the psychophysical tuning functions is to read out 
+The channels in the behavioral model described above have tuning which, by definition, matches the behavior. In reality, the psychophysical scaling is a result of the readout process from neurons tuned with much sharper functions. To explore how attention might change channel responses we explored how to connect sharp tuning functions, such as those neurons might have, to the psychophysical space described above. One way to approach this problem is to assume that the psychophysical similarity is the result of correlating channel response profiles which have exponential decay (M. Schurgin, personal communication, 2019). But neural tuning functions have a variety of profiles and restricting them to only exponential distributions is too restrictive. In our simulations we avoided this issue by assuming that the psychophysical similarity is a side effect of a readout process, rather than a function of that process.
 
-The approximate shape of the psychophysical tuning functions (Eq. \ref{eqn:c5psycho}) can be recovered by computing the correlation between channels with normally distributed noise. 
+In our simulation we assumed that channels had a Von Mises tuning with a relatively sharp profile (Fig. \ref{fig:c4f7}a). The Von Mises distribution is computed from the equation:
+
+\begin{equation}
+    \exp(\frac{\kappa*\cos{x-\mu}}{2*\pi*I_0(\kappa)})
+\end{equation}
+
+The parameters $\mu$ and $\frac{1}{\kappa}$ are analogous to $\mu$ and $\sigma^2$ of the normal distribution. $I_0$ is the modified Bessel function of order 0.
+
+As before the response of each channel had independent Gaussian noise at the time of stimulus encoding. To read out from these channels we assumed there were a large number of parallel linear readouts. Each linear readout was assigned a single stimulus value (e.g. $\theta=0$) and computed the dot product of the channel responses (with noise) against the ideal response of each channel for that stimulus value in the absence of noise. We assumed that the choice of the entire system would be the stimulus value with the maximal dot product response.
+
+[todo: not sure how to format equation]
+
+% \begin{equation}
+%     \max_{\mu}
+% \end{equation}
+
+To simulate different models of attention we either applied a gain to the noisy channel responses or changed the set of mean channel tuning values. 
 
 \section{Results}
 
@@ -126,16 +136,16 @@ We characterized human perceptual sensitivity to the average motion direction of
 \begin{figure}
 \centering
 \includegraphics[keepaspectratio,width=0.5\textwidth]{figs_c4/f2_aca_parameters.pdf}
-\caption[Behavioral task]{}
+\caption[Parameters that control difficulty of averaging]{Averaging difficulty is controlled by stimulus duration and angle distance between patches. (a) The average estimation error across observers is shown for a median split of the angle difference between the two dot patches that were averaged. (b) As in (a) for a median split of stimulus duration.}
 \label{fig:c4f3}
 \end{figure}
 
-The averaging task demonstrates that if differences in selection exist they are small and may depend in specific ways on the context of particular tasks. What that design cannot differentiate is whether any small performance differences are the result of a change in the sensitivity between conditions or bias between conditions. In some previous experiments researchers have reported that spatial compared to feature-based selection leads to small differences in timing [todo: cite] and performance [todo: cite]. We next sought to design a task which could differentiate between changes in bias and sensitivity. Our rationale was that a change in bias should be related to observers making errors whereas a change in sensitivity would be related to the computation occurring during sensory selection. We first designed a task to orthogonalize these dimensions and then extended an existing psychophysics model to capture the behavior. 
+The averaging task demonstrates that if differences in selection exist they are small and may depend in specific ways on the context of particular tasks. What that design cannot differentiate is whether any small performance differences are the result of a change in the sensitivity between conditions or bias between conditions. In some previous experiments researchers have reported that spatial compared to feature-based selection leads to small differences in timing \citep{Liu2007-ed} and performance [todo: cite]. We next sought to design a task which could differentiate between changes in bias and sensitivity. Our rationale was that a change in bias should be related to observers making errors, for example by choosing the wrong stimulus to report, whereas a change in sensitivity would be related to the variability in the sensory representation and motor response. We first designed a task to orthogonalize these dimensions and then extended an existing psychophysics model to capture the behavior. 
 
 \begin{figure}
 \centering
 \includegraphics[keepaspectratio,width=0.5\textwidth]{figs_c4/f4_estimationtask.pdf}
-\caption[Estimation task]{}
+\caption[Estimation task]{Estimation task. Observers began each trial by fixating a central cross (Fixation). A pre-cue (Cue) was then shown }
 \label{fig:c4f4}
 \end{figure}
 
@@ -144,25 +154,30 @@ The estimation task uses the same stimulus as the averaging task, but we now ask
 \begin{figure}
 \centering
 \includegraphics[keepaspectratio,width=0.5\textwidth]{figs_c4/f3_TCC_model.pdf}
-\caption[TCC model]{}
+\caption[Estimation task model]{Estimation task model. The model of the estimation task is based on an existing model of working memory estimation by \citet{Schurgin2018-vi}. (a) In the model independent channels encode the stimulus with a response profile defined by the psychophysical distance of each channel's preferred response and the stimulus. The channel responses are normally distributed with $\sigma=1$. (b) A free parameter in the model controls the sensitivity of the channels ($d'$), which acts as a multiplicative gain on the amplitudes of each channel response. (c) To read out an estimate of the stimulus angle an observer takes the maximum response over the channels. We show here the full likelihood distribution over all angles, computed numerically (see Methods: todo). (d) The same distributions in (c), the likelihood of response for different values of $d'$, are shown in circular space.}
 \label{fig:c4f5}
 \end{figure}
 
-To understand the data we collected from the estimation task we needed to decompose bias and sensitivity. To do this we employed a simple model of perceptual sensitivity 
+To understand the data we collected from the estimation task we needed to decompose bias from sensitivity. To do this we employed a simple model of perceptual sensitivity which fits two parameters for each condition. TODO (Fig. \ref{fig:c4f5}). 
 
 \begin{figure}
 \centering
 \includegraphics[keepaspectratio,width=0.5\textwidth]{figs_c4/f4b_estimation_perf.pdf}
-\caption[Estimation task performance]{}
+\caption[Estimation task performance]{Performance in the estimation task. (a) Three of the conditions used in the experiment are shown for trials where selection was performed by the direction of motion and the report was the color. Opacity is used to indicate which dot patches are memorized in each condition and to emphasize that the response in all conditions is identical (reporting the color of a single dot patch). In Cue 4 trials an observer memorized all four colors shown and was then asked to report the color of a single dot patch, e.g. the dots moving upward on the left side (orange arrow, highlighted). In Cue 2 trials the observer either memorized the colors on one side (Cue side) and was post-cued about the direction, or memorized two dot patches moving in the same direction (Cue direction) and was post-cued about the side. (b) The model estimate of sensitivity for each of the four dot patches is shown separated from the probability of reporting about each dot patch. Observers reported about the distractor dot patch less than 2\% of the time. (c-d) Conventions as in (b) for the two cue 2 conditions. (e) Confidence intervals for the $d'$ parameter are shown for each condition.}
 \label{fig:c4f6}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[keepaspectratio,width=0.5\textwidth]{figs_c4/f5_channel_attention.pdf}
-\caption[Attention in a channel model]{Implementations of attention in a hypothetical channel model. }
+\caption[Attention in a channel model]{Implementations of attention in a hypothetical channel model. (a) Examples are shown of how neuron responses might change during attention. (b) Response likelihoods are shown for the different attention models, see Methods for model details.}
 \label{fig:c4f7}
 \end{figure}
 
 \section{Discussion}
 
+
+
+In general, the idea that spatial selection precedes feature-based selection matches in some ways with cortical physiology. Early visual cortex is organized retinotopically \citep{Wandell2007-pr} while sensitivity to specific visual features only emerges later [todo: cite]. 
+
+The stimulus we studied has been used previously to study how feature-based attention occurs in the brain \citep{Saenz2003-qz}. Also \citep{Saenz2002-fs}.
