@@ -26,14 +26,32 @@
 \DeclareLanguageMapping{english}{american-apa}
 % \documentclass[bibliography=totoc]{scrartcl}
 
+\AtEveryBibitem{%
+   \clearfield{day}%
+   \clearfield{month}%
+   \clearfield{endday}%
+   \clearfield{endmonth}%
+}
+
+\renewcommand{\topfraction}{.85}
+\renewcommand{\bottomfraction}{.7}
+\renewcommand{\textfraction}{.15}
+\renewcommand{\floatpagefraction}{.66}
+\renewcommand{\dbltopfraction}{.66}
+\renewcommand{\dblfloatpagefraction}{.66}
+\setcounter{topnumber}{9}
+\setcounter{bottomnumber}{9}
+\setcounter{totalnumber}{20}
+\setcounter{dbltopnumber}{9}
+
 \begin{document}
 
 \title{Computational linking models of\\human selective visual attention}
 \author{Daniel Birman}
 \principaladviser{Justin L. Gardner}
 \firstreader{Kalanit Grill-Spector}
-\secondreader{Tirin Moore}
-\thirdreader{Anthony Norcia}
+\secondreader{Anthony Norcia}
+% \secondreader{Tirin Moore}
 
 \beforepreface
 \prefacesection{Abstract}
@@ -63,6 +81,8 @@
 \input{3_readout.tex}
 
 \chapter[Comparing spatial and feature-based attention]{Aim 2: Comparing different forms of selective visual attention on a shared perceptual metric}
+
+\bibliographystyle{apalike}
 
 \input{4_spatial_vs_feature.tex}
 
