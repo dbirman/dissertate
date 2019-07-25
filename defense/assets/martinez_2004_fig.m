@@ -38,19 +38,19 @@ afit = fitVonMises(x,y,90);
 %% figure
 cmap = colorblindmap/255;
 h = figure(1); clf; hold on
-plot(ufit.xSmooth,ufit.yFitSmooth*sum(unatt(:,2)),'-','Color',cmap(1,:));
-p1 = plot(unatt(:,1),unatt(:,2),'o','MarkerFaceColor',cmap(1,:),'MarkerEdgeColor','w','MarkerSize',10);
+% plot(ufit.xSmooth,ufit.yFitSmooth*sum(unatt(:,2)),'-','Color',cmap(1,:));
+p1 = plot(unatt(:,1),unatt(:,2),'-o','Color',cmap(1,:),'MarkerFaceColor',cmap(1,:),'MarkerEdgeColor','w','MarkerSize',10);
 
-plot(ufit.xSmooth,ufit.yFitSmooth*sum(unatt(:,2))*1.35-7,'-','Color',cmap(7,:));
+% plot(ufit.xSmooth,ufit.yFitSmooth*sum(unatt(:,2))*1.35-7,'-','Color',cmap(7,:));
 % plot(ufit.xSmooth,ufit.yFitSmooth*sum(att(:,2)),'-','Color',cmap(7,:));
-p2 = plot(att(:,1),att(:,2),'o','MarkerFaceColor',cmap(7,:),'MarkerEdgeColor','w','MarkerSize',10);
+p2 = plot(att(:,1),att(:,2),'-o','Color',cmap(7,:),'MarkerFaceColor',cmap(7,:),'MarkerEdgeColor','w','MarkerSize',10);
 
-axis([0 180 0 76]);
+axis([0 180 0 40]);
 
 legend([p1 p2],{'Unattended','Attended'});
 
 set(gca,'XTick',0:20:180);
-set(gca,'YTick',[0 76]);
+set(gca,'YTick',[0 40]);
 
 xlabel('Orientation');
 ylabel('Response (spikes / s)');
