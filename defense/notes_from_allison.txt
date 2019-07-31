@@ -1,7 +1,5 @@
 Notes:
 
-Birds - everybody counts birds, no humble bragging about climbing.
-
 Talk about the idea of trade-offs. You lose information if you change sensory representations (e.g. gorilla suit), but you don't lose information if you change read out. Put this in a starting slide at the very beginning.
 
 In the early demos, make sure you explain the task clearly. (1) Switch happens from one exposure to the next, (2) There are two ways to attend (left vs. right). 
@@ -21,3 +19,4 @@ Black on the picture of the brain to highlight V1 needs to be emphasized earlier
 Don't say "Listen" 
 
 Introduce the idea of a sensory representation earlier 
+
